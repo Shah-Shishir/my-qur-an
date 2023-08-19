@@ -35,5 +35,4 @@ export interface Surah {
   number: number;
   numberOfAyahs: number;
   revelationType: string;
-  currentlyPlaying: boolean;
 }

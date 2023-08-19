@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { TabsComponent } from './components/tabs/tabs.component';
+import { TabsComponent } from './core/components/tabs/tabs.component';
 
 const routes: Routes = [
   {
@@ -17,6 +17,10 @@ const routes: Routes = [
         loadChildren: () => import('./pages/surahs/surahs.module').then(m => m.SurahsPageModule)
       }
     ]
+  },
+  {
+    path: 'surah-details',
+    loadChildren: () => import('./pages/surahs/surah-details/surah-details.module').then( m => m.SurahDetailsPageModule)
   }
 ];
 

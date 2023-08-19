@@ -83,13 +83,11 @@
   .ratio-#{$i}px { width: #{$i}px !important; height: #{$i}px !important; }
   .fs-#{$i}px { font-size: #{$i}px !important; }
   .m-#{$i}px { margin: #{$i}px !important; }
-  .mx-#{$i}px { 
-    margin-right: #{$i}px !important;
-    margin-left: #{$i}px !important;
+  .mx-#{$i}px {
+    margin-inline: #{$i}px !important;
   }
-  .my-#{$i}px { 
-    margin-top: #{$i}px !important;
-    margin-bottom: #{$i}px !important;
+  .my-#{$i}px {
+    margin-block: #{$i}px !important;
   }
   .mt-#{$i}px { margin-top: #{$i}px !important; }
   .mb-#{$i}px { margin-bottom: #{$i}px !important; }
@@ -97,12 +95,10 @@
   .mr-#{$i}px { margin-right: #{$i}px !important; }
   .p-#{$i}px { padding: #{$i}px !important; }
   .px-#{$i}px {
-    padding-right: #{$i}px !important;
-    padding-left: #{$i}px !important;
+    padding-inline: #{$i}px !important;
   }
   .py-#{$i}px {
-    padding-top: #{$i}px !important;
-    padding-bottom: #{$i}px !important;
+    padding-block: #{$i}px !important;
   }
   .pt-#{$i}px { padding-top: #{$i}px !important; }
   .pb-#{$i}px { padding-bottom: #{$i}px !important; }

@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { TabsModule } from './components/tabs/tabs.module';
+import { TabsModule } from './core/components/tabs/tabs.module';
 import { HttpClientModule } from '@angular/common/http';
 
 // Routing

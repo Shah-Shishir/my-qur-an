@@ -1,0 +1,25 @@
+<ion-card class="surah">
+  <ion-card-content class="flex justify-content-between off-black">
+    <div>
+      <div class="fw-600 mb-10px fs-16px off-black">
+        {{ surah.number }}. {{ surah.englishName }}
+      </div>
+      <div class="arabic-name">
+        {{ surah.name }}
+      </div>
+      <div>
+        {{ surah.englishNameTranslation }}
+      </div>
+    </div>
+
+    <div>
+      <div>
+        Number of Ayahs: {{ surah.numberOfAyahs }}
+      </div>
+
+      <div>
+        {{ surah.revelationType }}
+      </div>
+    </div>
+  </ion-card-content>
+</ion-card>

@@ -23,7 +23,7 @@ export class SurahService {
     return this.httpService.get<T>(apiUrl);
   }
 
-  getSurah<T>(endPoint: string, surahNo: number, edition?: string): Observable<SurahResponse> {
+  getSurah<T>(endPoint: string, surahNo: number, edition: string): Observable<SurahResponse> {
     let apiUrl: string = `${this.BASE_URL}/${endPoint}/${surahNo}`;
 
     if (edition) {

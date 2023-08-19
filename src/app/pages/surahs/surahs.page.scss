@@ -1,10 +1,6 @@
-.surah {
-  font-family: 'Inter', sans-serif;
-
-  .arabic-name {
-    font-family: 'Scheherazade New', serif;
-    font-size: 18px;
-    color: #444; 
-    margin-bottom: 10px;
+@media screen and (min-width: 600px) {
+  ion-list {
+    width: 60% !important;
+    margin-inline: auto !important;
   }
 }
