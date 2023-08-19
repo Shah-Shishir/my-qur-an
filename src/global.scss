@@ -1,0 +1,111 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import '@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/* Importing Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Scheherazade+New:wght@400;500;600;700&display=swap');
+
+
+/* Utility Classes */
+
+// POSITION
+.relative { position: relative !important; }
+.absolute { position: absolute !important; }
+.fixed { position: fixed !important; }
+
+// MARGIN
+.mx-auto { margin-inline: auto !important; }
+
+// DISPLAY
+.hidden { display: none !important; }
+.block { display: block !important; }
+.inline-block { display: inline-block !important; }
+
+// FLEX UTILITIES
+.flex { display: flex !important; }
+.flex-row { flex-direction: row !important; }
+.flex-col { flex-direction: column !important; }
+.align-items-start { align-items: flex-start !important; }
+.align-items-end { align-items: flex-end !important; }
+.align-items-center { align-items: center !important; }
+.justify-content-start { justify-content: flex-start !important; }
+.justify-content-end { justify-content: flex-end !important; }
+.justify-content-center { justify-content: center !important; }
+.justify-content-between { justify-content: space-between !important; }
+.justify-content-around { justify-content: space-around !important; }
+.justify-content-evenly { justify-content: space-evenly !important; }
+
+// COLOR
+.off-black { color: #444 !important; }
+.black { color: #000 !important; }
+.white { color: #fff !important; }
+
+@for $i from 0 through 266 {
+  @if $i >=1 and $i <=10 {
+    .top-#{$i * 10} { top: #{$i * 10}+'%' !important; }
+    .bottom-#{$i * 10} { bottom: #{$i * 10}+'%' !important; }
+    .left-#{$i * 10} { left: #{$i * 10}+'%' !important; }
+    .right-#{$i * 10} { right: #{$i * 10}+'%' !important; }
+    .w-#{$i * 10} { width: #{$i * 10}+'%' !important; }
+    .h-#{$i * 10} { height: #{$i * 10}+'%' !important; }
+    .fw-#{$i * 100} { font-weight: #{$i * 100} !important; }
+  }
+  .top-#{$i}px { top: #{$i}px !important; }
+  .right-#{$i}px { right: #{$i}px !important; }
+  .bottom-#{$i}px { bottom: #{$i}px !important; }
+  .left-#{$i}px { left: #{$i}px !important; }
+  .gap-#{$i}px { gap: #{$i}px !important; }
+  .w-#{$i}px { width: #{$i}px !important; }
+  .h-#{$i}px { height: #{$i}px !important; }
+  .ratio-#{$i}px { width: #{$i}px !important; height: #{$i}px !important; }
+  .fs-#{$i}px { font-size: #{$i}px !important; }
+  .m-#{$i}px { margin: #{$i}px !important; }
+  .mx-#{$i}px { 
+    margin-right: #{$i}px !important;
+    margin-left: #{$i}px !important;
+  }
+  .my-#{$i}px { 
+    margin-top: #{$i}px !important;
+    margin-bottom: #{$i}px !important;
+  }
+  .mt-#{$i}px { margin-top: #{$i}px !important; }
+  .mb-#{$i}px { margin-bottom: #{$i}px !important; }
+  .ml-#{$i}px { margin-left: #{$i}px !important; }
+  .mr-#{$i}px { margin-right: #{$i}px !important; }
+  .p-#{$i}px { padding: #{$i}px !important; }
+  .px-#{$i}px {
+    padding-right: #{$i}px !important;
+    padding-left: #{$i}px !important;
+  }
+  .py-#{$i}px {
+    padding-top: #{$i}px !important;
+    padding-bottom: #{$i}px !important;
+  }
+  .pt-#{$i}px { padding-top: #{$i}px !important; }
+  .pb-#{$i}px { padding-bottom: #{$i}px !important; }
+  .pl-#{$i}px { padding-left: #{$i}px !important; }
+  .pr-#{$i}px { padding-right: #{$i}px !important; }
+}

@@ -1,0 +1,47 @@
+<app-header title="Surahs"></app-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let surah of surahs; trackBy: surahTrackBy" class="surah">
+      <!-- flex flex-row align-items-center justify-content-between -->
+      <ion-card-header class="">
+        <ion-card-title class="fs-16px off-black">
+          {{ surah.number }}. {{ surah.englishName }}
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content class="flex justify-content-between off-black">
+        <div>
+          <div class="arabic-name">
+            {{ surah.name }}
+          </div>
+          <div>
+            {{ surah.englishNameTranslation }}
+          </div>
+        </div>
+
+        <div>
+          <div>
+            Number of Ayahs: {{ surah.numberOfAyahs }}
+          </div>
+
+          <div>
+            {{ surah.revelationType }}
+          </div>
+
+          <div>
+            <ion-icon name="play-circle-sharp" class="ratio-25px" *ngIf="!surah.currentlyPlaying"
+              (click)="openActionSheet(surah)">
+            </ion-icon>
+            <ion-icon name="pause-circle-sharp" class="ratio-25px" *ngIf="surah.currentlyPlaying"></ion-icon>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Open audio editions -->
+    <ion-action-sheet mode="ios" [isOpen]="isActionSheetOpen" header="Audio Editions" [buttons]="actionSheetButtons"
+      (didDismiss)="setOpen(false)">
+    </ion-action-sheet>
+  </ion-list>
+</ion-content>
