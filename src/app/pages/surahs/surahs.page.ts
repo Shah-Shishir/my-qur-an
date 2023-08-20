@@ -14,6 +14,7 @@ import { Surah, SurahsResponse } from 'src/app/models/surah.model';
 
 export class SurahsPage {
   surahs: Surah[] = [];
+  filteredSurahs: Surah[] = [];
 
   /* End points */
   surahEndPoint: string = 'surah';
@@ -31,11 +32,16 @@ export class SurahsPage {
       .subscribe({
         next: (res: SurahsResponse) => {
           this.surahs = res.data;
+          this.filteredSurahs = res.data;
         }
       });
   }
 
   surahTrackBy(index: number, surah: Surah) {
     return surah.number;
+  }
+
+  updateFilteredSurahs(event: Surah[]) {
+    this.filteredSurahs = event;
   }
 }

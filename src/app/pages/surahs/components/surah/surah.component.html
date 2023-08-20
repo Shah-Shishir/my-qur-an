@@ -18,7 +18,10 @@
       </div>
 
       <div>
-        {{ surah.revelationType }}
+        <ion-chip [class.meccan]="surah.revelationType === revelationTypes.MECCAN"
+          [class.medinan]="surah.revelationType === revelationTypes.MEDINAN">
+          {{ surah.revelationType }}
+        </ion-chip>
       </div>
     </div>
   </ion-card-content>

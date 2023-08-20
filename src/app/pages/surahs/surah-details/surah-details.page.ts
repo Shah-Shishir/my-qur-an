@@ -9,7 +9,7 @@ import { Edition, EditionResponse } from 'src/app/models/edition.model';
 import { Ayah, Surah, SurahResponse } from 'src/app/models/surah.model';
 
 // Enums
-import { EDITION } from 'src/app/constants/enums';
+import { EDITIONS } from 'src/app/constants/enums';
 import { ActionSheetButton } from '@ionic/angular';
 
 @Component({
@@ -39,7 +39,7 @@ export class SurahDetailsPage implements OnInit {
   }
 
   onGetAudioEditions() {
-    this.editionService.getAllEditionsByFormat(this.editionEndPoint, EDITION.AUDIO)
+    this.editionService.getAllEditionsByFormat(this.editionEndPoint, EDITIONS.AUDIO)
       .subscribe({
         next: (res: EditionResponse) => {
           this.audioEditions = res.data;

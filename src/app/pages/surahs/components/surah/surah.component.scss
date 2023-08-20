@@ -8,4 +8,16 @@
     color: #444;
     margin-bottom: 10px;
   }
+
+  ion-chip {
+    &.meccan {
+      --background: #00213f;
+      --color: #adefd1;
+    }
+
+    &.medinan {
+      --background: #252927;
+      --color: #fff;
+    }
+  }
 }
