@@ -1,3 +1,30 @@
+.go-surah-input {
+  font-weight: 400;
+  border: none;
+  border-bottom: 1px solid #444;
+  width: 40px;
+  text-align: center;
+  padding-block: 2px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
 @media screen and (min-width: 600px) {
   ion-list {
     width: 60% !important;

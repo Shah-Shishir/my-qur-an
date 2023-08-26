@@ -1,14 +1,28 @@
 <app-header title="Surahs"></app-header>
 
-<ion-content>
+<ion-content [scrollEvents]="true" (ionScroll)="scrollPage($event)">
   <ion-list>
     <app-search-filter-ui [surahs]="surahs" (updateFilteredSurahs)="updateFilteredSurahs($event)">
     </app-search-filter-ui>
 
-    <ion-text class="my-6px ml-8px inline-block off-black fw-600">
-      Total Results: {{ filteredSurahs.length }}
-    </ion-text>
+    <div class="flex justify-content-between mt-20px">
+      <ion-text class="my-6px ml-8px inline-block off-black fw-600">
+        Total Results: {{ filteredSurahs.length }}
+      </ion-text>
+
+      <div class="fw-600 mr-10px">
+        Go to Surah
+        <input class="go-surah-input" type="number" [(ngModel)]="surahNo" (input)="inputSurahNo($event)"
+          (keyup.enter)="goToSurah()" />
+      </div>
+    </div>
 
     <app-surah *ngFor="let surah of filteredSurahs; trackBy: surahTrackBy" [surah]="surah"></app-surah>
   </ion-list>
 </ion-content>
+
+<ion-fab slot="fixed" vertical="bottom" horizontal="end" *ngIf="showScrollToTopBtn">
+  <ion-fab-button size="small" color="dark" (click)="scrollToTop()">
+    <ion-icon name="chevron-up"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
