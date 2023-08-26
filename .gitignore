@@ -22,6 +22,7 @@ log.txt
 /www
 /platforms
 /plugins
+/android
 
 # Compiled output
 /dist
@@ -66,3 +67,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# JKS
+my-qur'an.jks

@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
 
 // Components
 import { SearchFilterUiComponent } from './search-filter-ui.component';
@@ -12,7 +13,8 @@ import { SearchFilterUiComponent } from './search-filter-ui.component';
   ],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    FormsModule
   ],
   exports: [
     SearchFilterUiComponent,

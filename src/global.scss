@@ -63,6 +63,11 @@
 .black { color: #000 !important; }
 .white { color: #fff !important; }
 
+// TEXT ALIGN
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+.text-center { text-align: center !important; }
+
 @for $i from 0 through 266 {
   @if $i >=1 and $i <=10 {
     .top-#{$i * 10} { top: #{$i * 10}+'%' !important; }

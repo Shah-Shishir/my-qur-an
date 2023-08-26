@@ -2,8 +2,13 @@
 
 <ion-content>
   <ion-list>
-    <app-search-filter-ui [surahs]="surahs"
-      (updateFilteredSurahs)="updateFilteredSurahs($event)"></app-search-filter-ui>
+    <app-search-filter-ui [surahs]="surahs" (updateFilteredSurahs)="updateFilteredSurahs($event)">
+    </app-search-filter-ui>
+
+    <ion-text class="my-6px ml-8px inline-block off-black fw-600">
+      Total Results: {{ filteredSurahs.length }}
+    </ion-text>
+
     <app-surah *ngFor="let surah of filteredSurahs; trackBy: surahTrackBy" [surah]="surah"></app-surah>
   </ion-list>
 </ion-content>

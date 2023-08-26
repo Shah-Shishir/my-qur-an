@@ -1,6 +1,57 @@
 <div class="flex">
-  <ion-searchbar animated="true" placeholder="Search a Surah..." (ionInput)="changeInputValue($event)"></ion-searchbar>
-  <ion-button color="light" class="my-8px mr-12px">
+  <ion-searchbar animated="true" placeholder="Search a Surah..." (ionInput)="changeInputValue($event)"
+    [(ngModel)]="searchText"></ion-searchbar>
+  <ion-button color="light" class="my-8px mr-12px" (click)="showFilterSection = !showFilterSection">
     <ion-icon slot="icon-only" name="filter-outline"></ion-icon>
   </ion-button>
+</div>
+
+<div *ngIf="showFilterSection">
+  <ion-card>
+    <ion-card-content>
+      <!-- Sorting -->
+      <div class="flex justify-content-between sorting-section">
+        <ion-list>
+          <ion-label class="off-black inline-block mb-10px">
+            Sort by Surah Name
+          </ion-label>
+          <ion-radio-group class="mt-10px" [(ngModel)]="currentNameSortingId" class="flex gap-20px"
+            (ionChange)="sortSurahsByName($event)">
+            <ion-radio *ngFor="let option of surahNameSortingOptions" labelPlacement="end" [value]="option.id"
+              class="off-black">
+              {{ option.label }}
+            </ion-radio>
+          </ion-radio-group>
+        </ion-list>
+
+        <ion-list>
+          <ion-label class="off-black inline-block mb-10px">
+            Sort by Ayahs
+          </ion-label>
+          <ion-radio-group [(ngModel)]="currentAyahSortingId" class="flex gap-20px"
+            (ionChange)="sortSurahsByAyahs($event)">
+            <ion-radio *ngFor="let option of ayahSortingOptions" labelPlacement="end" [value]="option.id"
+              class="off-black">
+              {{ option.label }}
+            </ion-radio>
+          </ion-radio-group>
+        </ion-list>
+      </div>
+
+      <!-- Filtering and Actions -->
+      <div class="flex justify-content-between">
+        <ion-list class="flex gap-20px">
+          <ion-checkbox *ngFor="let type of relevationFilterOptions;" labelPlacement="end" color="primary"
+            [checked]="type.checked" (ionChange)="filterSurahs($event, type.label)" class="off-black">
+            {{ type.label }} ({{ type.count }})
+          </ion-checkbox>
+        </ion-list>
+
+        <div>
+          <ion-button color="danger" size="small" (click)="resetFiltering()">Reset</ion-button>
+          <ion-button color="danger" size="small" (click)="closeFilterSection()">Close</ion-button>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </div>
